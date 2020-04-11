@@ -1,10 +1,12 @@
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis-0
 spec:
-  # 只能启动一个实例，否则存在资源竞争
+  selector:
+    matchLabels:
+      app: redis-0
   replicas: 1
   template:
     metadata:
@@ -32,12 +34,14 @@ spec:
           mountPath: "/data"
 
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis-1
 spec:
-  # 只能启动一个实例，否则存在资源竞争
+  selector:
+    matchLabels:
+      app: redis-1
   replicas: 1
   template:
     metadata:
@@ -65,12 +69,14 @@ spec:
           mountPath: "/data"
 
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis-2
 spec:
-  # 只能启动一个实例，否则存在资源竞争
+  selector:
+    matchLabels:
+      app: redis-2
   replicas: 1
   template:
     metadata:
@@ -98,12 +104,14 @@ spec:
           mountPath: "/data"
 
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis-3
 spec:
-  # 只能启动一个实例，否则存在资源竞争
+  selector:
+    matchLabels:
+      app: redis-3
   replicas: 1
   template:
     metadata:
@@ -131,12 +139,14 @@ spec:
           mountPath: "/data"
 
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis-4
 spec:
-  # 只能启动一个实例，否则存在资源竞争
+  selector:
+    matchLabels:
+      app: redis-4
   replicas: 1
   template:
     metadata:
@@ -164,12 +174,14 @@ spec:
           mountPath: "/data"
 
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis-5
 spec:
-  # 只能启动一个实例，否则存在资源竞争
+  selector:
+    matchLabels:
+      app: redis-5
   replicas: 1
   template:
     metadata:
